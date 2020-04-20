@@ -1,0 +1,129 @@
+{
+  "products": [
+    {
+      "name": "Acer",
+      "type": "laptop",
+      "price": 159,
+      "picture": "https://www.gigatron.rs/img/products/medium/image5e42bd4778063.png",
+      "id": 1
+    },
+    {
+      "name": "Asus",
+      "type": "laptop",
+      "price": 129,
+      "picture": "https://c1.neweggimages.com/ProductImage/34-235-070-V01.jpg",
+      "id": 2
+    },
+    {
+      "name": "Dell",
+      "type": "laptop",
+      "price": 99,
+      "picture": "https://www.comtradeshop.com/img/products/2019-11-15/dell-inspiron-3593-not14214-laptop-15-6-quot-fhd-intel-quad-core-i5-1035g1-4gb-1tb-geforce-mx230-ubuntu-srebrni-3-cell_Tbcnr_4.jpg",
+      "id": 3
+    },
+    {
+      "name": "Lenovo",
+      "type": "laptop",
+      "price": 149,
+      "picture": "https://www.comtradeshop.com/img/products/2019-08-26/lenovo-ideapad-330-15ikb-81dc0166ya-laptop-intel-15-6-quot-fhd-intel-core-i3-7020u-4gb-128gb-ssd-geforce-mx110-crni_Tmn1e_3.jpg",
+      "id": 4
+    },
+    {
+      "name": "Panasonic",
+      "type": "laptop",
+      "price": 29,
+      "picture": "https://www.notebookcheck.net/uploads/tx_nbc2/CF-19_01.jpg",
+      "id": 5
+    },
+    {
+      "name": "Gateway",
+      "type": "laptop",
+      "price": 49,
+      "picture": "https://www.notebookcheck.net/uploads/tx_nbc2/gateID47_01.jpg",
+      "id": 6
+    },
+    {
+      "name": "Apex",
+      "type": "keyboard",
+      "price": 16,
+      "picture": "https://images-na.ssl-images-amazon.com/images/I/81yOuAUQAiL._AC_SL1500_.jpg",
+      "id": 7
+    },
+    {
+      "name": "Logitech",
+      "type": "keyboard",
+      "price": 69,
+      "picture": "https://www.bhphotovideo.com/images/images2500x2500/logitech_920_008848_g513_rgb_mechanical_gaming_1418036.jpg",
+      "id": 8
+    },
+    {
+      "name": "Lenovo",
+      "type": "keyboard",
+      "price": 15,
+      "picture": "https://www.lenovo.com/medias/GX30M39655-main-v1.jpg?context=bWFzdGVyfHJvb3R8Nzg0MTR8aW1hZ2UvanBlZ3xoZDAvaGZmLzk4OTUwNTQ5OTk1ODIuanBnfDYyMjY0MGU2Yjg5NjRhNjcyYzI3Zjg2YmMwMDgzNzNiYzJmN2YzN2E1ZTA1MmVjMWQ1MjdhYTE2NDJkNWUzOTM",
+      "id": 9
+    }
+  ],
+  "productDetail": [
+    {
+      "name": "Acer",
+      "type": "laptop",
+      "picture": "https://www.gigatron.rs/img/products/medium/image5e42bd4778063.png",
+      "processor": "Intel Core i7 7th Gen 7100U",
+      "BaseClockSpeed": "2.4 GHz",
+      "RAM": "8GB",
+      "HardDisk": "1TB",
+      "id": 1
+    },
+    {
+      "name": "Asus",
+      "type": "laptop",
+      "picture": "https://c1.neweggimages.com/ProductImage/34-235-070-V01.jpg",
+      "processor": "Intel Core i5 (7th Gen)",
+      "BaseClockSpeed": "2.2 GHz",
+      "RAM": "8GB",
+      "HardDisk": "500GB",
+      "id": 2
+    },
+    {
+      "name": "Dell",
+      "type": "laptop",
+      "picture": "https://www.comtradeshop.com/img/products/2019-11-15/dell-inspiron-3593-not14214-laptop-15-6-quot-fhd-intel-quad-core-i5-1035g1-4gb-1tb-geforce-mx230-ubuntu-srebrni-3-cell_Tbcnr_4.jpg",
+      "processor": "Intel Core I5 (4th Generation)",
+      "BaseClockSpeed": "2.7 GHz",
+      "RAM": "4GB DDR3",
+      "HardDisk": "1TB",
+      "id": 4
+    },
+    {
+      "name": "Lenovo",
+      "type": "laptop",
+      "picture": "https://www.comtradeshop.com/img/products/2019-08-26/lenovo-ideapad-330-15ikb-81dc0166ya-laptop-intel-15-6-quot-fhd-intel-core-i3-7020u-4gb-128gb-ssd-geforce-mx110-crni_Tmn1e_3.jpg",
+      "processor": "Intel Celeron N4000",
+      "BaseClockSpeed": "2.4 GHz",
+      "RAM": "4GB",
+      "HardDisk": "2TB",
+      "id": 5
+    },
+    {
+      "name": "Gateway",
+      "type": "laptop",
+      "picture": "https://www.notebookcheck.net/uploads/tx_nbc2/gateID47_01.jpg",
+      "processor": "Intel Pentium B960",
+      "BaseClockSpeed": "2.2 GHz",
+      "RAM": "8GB DDR3",
+      "HardDisk": "500GB",
+      "id": 6
+    },
+    {
+      "name": "Panasonic",
+      "type": "laptop",
+      "picture": "https://www.notebookcheck.net/uploads/tx_nbc2/CF-19_01.jpg",
+      "processor": "Intel® Core™ i5-7300U vPro™ processor (optional i7-7600U)",
+      "BaseClockSpeed": "2.7 GHz",
+      "RAM": "8GB DDR3",
+      "HardDisk": "1TB SSD",
+      "id": 6
+    }
+  ]
+}
