@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const ProdBuy = ({ prod, clearProductsToBuy, deleteProd }) => {
+const ProdBuy = ({ prod, clearProductsToBuy, deleteProd, buyProducts }) => {
   const prods = prod.map((prod, index) => {
     return (
       <div className="card" key={Math.random()}>

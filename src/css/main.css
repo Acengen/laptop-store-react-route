@@ -1,5 +1,6 @@
-.container {
+.container-fluid {
   padding: 0px;
+  margin: 0px;
   font-family: "Lato", sans-serif;
 }
 
@@ -40,6 +41,7 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-gap: 5px;
   margin-top: 10px;
+  position: relative;
 }
 
 .products i {
@@ -228,7 +230,7 @@ form input::placeholder {
 }
 
 .product-detail .card {
-  width: 80%;
+  max-width: 800px;
   position: relative;
   padding: 10px;
   border-radius: 0px;
@@ -301,11 +303,72 @@ form input::placeholder {
   border: none;
 }
 
+.buy {
+  border: none;
+  background-color: crimson;
+  padding: 5px;
+  color: #fdfdfd;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.prod-buy-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .close {
   position: absolute;
   right: 0;
   top: 0;
   padding: 5px;
   cursor: pointer;
+}
+
+.buy-price-products {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 25px;
+  color: #eeeeee;
+  background-color: #d6426c;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.buy-price-products div {
+  padding-left: 22px;
+}
+
+.buy-price-products .fa-refresh {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  cursor: pointer;
+}
+
+/* media query 740px */
+@media (max-width: 740px) {
+  .product-detail .card {
+    text-align: center;
+  }
+  .product-detail .card img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 530px) {
+  .products .card img {
+    width: 200px;
+    margin: auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */

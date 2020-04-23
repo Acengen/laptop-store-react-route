@@ -1,11 +1,13 @@
-.container {
+.container-fluid {
   padding: 0px;
+  margin: 0px;
   font-family: "Lato", sans-serif;
 }
 
 .navi-bar {
   background-color: #393e46;
   display: flex;
+
   justify-content: space-around;
   align-items: center;
   padding: 20px;
@@ -30,11 +32,13 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-gap: 5px;
   margin-top: 10px;
+  position: relative;
   i {
     font-size: 20px;
   }
   .card {
     border-radius: 0px;
+
     img {
       width: 100%;
       height: 300px;
@@ -167,7 +171,7 @@ form {
   }
 
   .card {
-    width: 80%;
+    max-width: 800px;
     position: relative;
     padding: 10px;
     border-radius: 0px;
@@ -235,11 +239,69 @@ form {
   font-weight: bold;
   border: none;
 }
-
+.buy {
+  border: none;
+  background-color: crimson;
+  padding: 5px;
+  color: #fdfdfd;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.prod-buy-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 .close {
   position: absolute;
   right: 0;
   top: 0;
   padding: 5px;
   cursor: pointer;
+}
+.buy-price-products {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  color: #eeeeee;
+  background-color: #d6426c;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  div {
+    padding-left: 22px;
+  }
+  .fa-refresh {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    cursor: pointer;
+  }
+}
+
+/* media query 740px */
+
+@media (max-width: 740px) {
+  .product-detail {
+    .card {
+      text-align: center;
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .products {
+    .card {
+      img {
+        width: 200px;
+        margin: auto;
+      }
+    }
+  }
 }

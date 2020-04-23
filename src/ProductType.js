@@ -22,6 +22,8 @@ const ProductType = ({ productsType, onChange }) => {
             >
               <i className="fa fa-shopping-cart"></i>
             </button>
+
+            {prods.price < 100 && <button className="buy">Hot!</button>}
           </div>
         </div>
       </div>

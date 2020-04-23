@@ -11,6 +11,7 @@ import About from "./About";
 import ProductDetail from "./ProductDetail";
 import ProdBuy from "./ProdBuy";
 import Alert from "./Alert";
+import Contact from "./Contact";
 
 class App extends Component {
   state = {
@@ -20,6 +21,7 @@ class App extends Component {
     prod: [],
     term: false,
     alert: "",
+    buyPrice: [],
   };
 
   componentDidMount() {
@@ -95,58 +97,62 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container">
+        <div className="container-fluid">
           <Navbar />
 
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <Fragment>
-                  <Alert alert={this.state.alert} />
+          <div className="container">
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={(props) => (
+                  <Fragment>
+                    <Alert alert={this.state.alert} />
 
-                  <Form
-                    searchProducts={this.searchProducts}
-                    alertShow={this.alertShow}
-                  />
-                  <button onClick={this.resetStore} className="reset">
-                    Reset Store
-                  </button>
-                  {this.state.productsType.length > 1 ? (
-                    <ProductType
-                      productsType={this.state.productsType}
-                      onChange={this.onChange}
+                    <Form
+                      searchProducts={this.searchProducts}
+                      alertShow={this.alertShow}
                     />
-                  ) : (
-                    <Products
-                      products={this.state.products}
-                      onChange={this.onChange}
+                    <button onClick={this.resetStore} className="reset">
+                      Reset Store
+                    </button>
+                    {this.state.productsType.length > 1 ? (
+                      <ProductType
+                        productsType={this.state.productsType}
+                        onChange={this.onChange}
+                      />
+                    ) : (
+                      <Products
+                        products={this.state.products}
+                        onChange={this.onChange}
+                        buyProducts={this.buyProducts}
+                      />
+                    )}
+                    <ProdBuy
+                      prod={this.state.prod}
+                      clearProductsToBuy={this.clearProductsToBuy}
+                      deleteProd={this.deleteProd}
                     />
-                  )}
-                  <ProdBuy
-                    prod={this.state.prod}
-                    clearProductsToBuy={this.clearProductsToBuy}
-                    deleteProd={this.deleteProd}
-                  />
-                </Fragment>
-              )}
-            />
-            <Route exact path="/about" component={About} />
-            <Route
-              exact
-              path="/productDetail/:name"
-              render={(props) => (
-                <Fragment>
-                  <ProductDetail
-                    {...props}
-                    productDetail={this.state.productDetail}
-                    getProductByName={this.getProductByName}
-                  />
-                </Fragment>
-              )}
-            />
-          </Switch>
+                  </Fragment>
+                )}
+              />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
+              <Route
+                exact
+                path="/productDetail/:name"
+                render={(props) => (
+                  <Fragment>
+                    <ProductDetail
+                      {...props}
+                      productDetail={this.state.productDetail}
+                      getProductByName={this.getProductByName}
+                    />
+                  </Fragment>
+                )}
+              />
+            </Switch>
+          </div>
         </div>
       </Router>
     );
