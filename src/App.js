@@ -12,6 +12,7 @@ import ProductDetail from "./ProductDetail";
 import ProdBuy from "./ProdBuy";
 import Alert from "./Alert";
 import Contact from "./Contact";
+import Buy from "./Buy";
 
 class App extends Component {
   state = {
@@ -22,6 +23,7 @@ class App extends Component {
     term: false,
     alert: "",
     buyPrice: [],
+    price: "",
   };
 
   componentDidMount() {
@@ -94,6 +96,19 @@ class App extends Component {
     }, 4000);
   };
 
+  buyProducts = (price) => {
+    const newPrice = parseFloat(this.state.price + price);
+    this.setState({
+      price: newPrice,
+    });
+  };
+
+  clearPrice = () => {
+    this.setState({
+      price: 0,
+    });
+  };
+
   render() {
     return (
       <Router>
@@ -147,6 +162,11 @@ class App extends Component {
                       {...props}
                       productDetail={this.state.productDetail}
                       getProductByName={this.getProductByName}
+                      buyProducts={this.buyProducts}
+                    />
+                    <Buy
+                      price={this.state.price}
+                      clearPrice={this.clearPrice}
                     />
                   </Fragment>
                 )}

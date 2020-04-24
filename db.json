@@ -73,6 +73,7 @@
       "BaseClockSpeed": "2.4 GHz",
       "RAM": "8GB",
       "HardDisk": "1TB",
+      "price": 159,
       "id": 1
     },
     {
@@ -83,6 +84,7 @@
       "BaseClockSpeed": "2.2 GHz",
       "RAM": "8GB",
       "HardDisk": "500GB",
+      "price": 129,
       "id": 2
     },
     {
@@ -93,6 +95,7 @@
       "BaseClockSpeed": "2.7 GHz",
       "RAM": "4GB DDR3",
       "HardDisk": "1TB",
+      "price": 99,
       "id": 4
     },
     {
@@ -103,6 +106,7 @@
       "BaseClockSpeed": "2.4 GHz",
       "RAM": "4GB",
       "HardDisk": "2TB",
+      "price": 149,
       "id": 5
     },
     {
@@ -113,6 +117,7 @@
       "BaseClockSpeed": "2.2 GHz",
       "RAM": "8GB DDR3",
       "HardDisk": "500GB",
+      "price": 49,
       "id": 6
     },
     {
@@ -123,6 +128,7 @@
       "BaseClockSpeed": "2.7 GHz",
       "RAM": "8GB DDR3",
       "HardDisk": "1TB SSD",
+      "price": 29,
       "id": 6
     }
   ]

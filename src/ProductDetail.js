@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class ProductDetail extends Component {
+  state = {
+    price: "",
+  };
+
   componentDidMount() {
     this.props.getProductByName(this.props.match.params.name);
   }
@@ -26,6 +30,12 @@ class ProductDetail extends Component {
               </div>
             </div>
           </div>
+          <button
+            onClick={() => this.props.buyProducts(prod.price)}
+            className="prod-buy-btn"
+          >
+            Buy Now
+          </button>
         </div>
       );
     });

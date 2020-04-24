@@ -1,27 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Buy from "./Buy";
 
 class Products extends React.Component {
   state = {
     prod: [],
     price: "",
   };
-  componentDidMount() {
-    this.buyProducts(0);
-  }
-  buyProducts = (price) => {
-    const newPrice = parseFloat(this.state.price + price);
-    this.setState({
-      price: newPrice,
-    });
-  };
 
-  clearPrice = () => {
-    this.setState({
-      price: 0,
-    });
-  };
   render() {
     const prod = this.props.products.map((prods) => {
       return (
@@ -48,26 +33,14 @@ class Products extends React.Component {
               >
                 <i className="fa fa-shopping-cart"></i>
               </button>
-              <button
-                onClick={() => this.buyProducts(prods.price)}
-                className="prod-buy-btn"
-              >
-                Buy
-              </button>
+
               {prods.price < 100 && <button className="buy">Hot!</button>}
             </div>
           </div>
         </div>
       );
     });
-    return (
-      <div className="products">
-        {prod}
-        <div>
-          <Buy price={this.state.price} clearPrice={this.clearPrice} />
-        </div>
-      </div>
-    );
+    return <div className="products">{prod}</div>;
   }
 }
 

@@ -187,7 +187,6 @@ form {
   position: fixed;
   background-color: #d6426c;
   width: 250px;
-
   right: 0;
   bottom: 0;
   z-index: 99;
@@ -252,7 +251,10 @@ form {
 .prod-buy-btn {
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
+  background-color: seagreen;
+  border: none;
+  color: #eeeeee;
 }
 .close {
   position: absolute;
