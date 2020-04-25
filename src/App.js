@@ -23,7 +23,9 @@ class App extends Component {
     term: false,
     alert: "",
     buyPrice: [],
-    price: "",
+    price: 0,
+    loading: false,
+    show: false,
   };
 
   componentDidMount() {
@@ -31,10 +33,13 @@ class App extends Component {
   }
 
   getProducts = async () => {
+    this.setState({ loading: true });
+
     const respon = await axios.get("http://localhost:3000/products");
 
     this.setState({
       products: respon.data,
+      loading: false,
     });
   };
 
@@ -47,12 +52,16 @@ class App extends Component {
   };
 
   getProductByName = async (name) => {
+    this.setState({
+      loading: true,
+    });
     const respon = await axios.get(
       `http://localhost:3000/productDetail?q=${name}`
     );
 
     this.setState({
       productDetail: respon.data,
+      loading: false,
     });
   };
 
@@ -76,7 +85,7 @@ class App extends Component {
   };
 
   deleteProd = (index) => {
-    let list = this.state.prod;
+    let list = [...this.state.prod];
     list.splice(index, 1);
 
     this.setState({
@@ -114,7 +123,6 @@ class App extends Component {
       <Router>
         <div className="container-fluid">
           <Navbar />
-
           <div className="container">
             <Switch>
               <Route
@@ -123,7 +131,6 @@ class App extends Component {
                 render={(props) => (
                   <Fragment>
                     <Alert alert={this.state.alert} />
-
                     <Form
                       searchProducts={this.searchProducts}
                       alertShow={this.alertShow}
@@ -140,7 +147,7 @@ class App extends Component {
                       <Products
                         products={this.state.products}
                         onChange={this.onChange}
-                        buyProducts={this.buyProducts}
+                        loading={this.state.loading}
                       />
                     )}
                     <ProdBuy
@@ -163,6 +170,8 @@ class App extends Component {
                       productDetail={this.state.productDetail}
                       getProductByName={this.getProductByName}
                       buyProducts={this.buyProducts}
+                      loading={this.state.loading}
+                      price={this.state.price}
                     />
                     <Buy
                       price={this.state.price}

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductType = ({ productsType, onChange }) => {
+  console.log(productsType);
   const prod = productsType.map((prods) => {
     return (
       <div className="card" key={prods.id}>

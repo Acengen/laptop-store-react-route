@@ -26,7 +26,7 @@ class Form extends Component {
         <form onSubmit={this.onSubmit}>
           <input
             onChange={this.onChange}
-            value={this.state.products}
+            value={this.state.productsType}
             type="text"
             name="name"
             placeholder="exp: laptop, keyboard"

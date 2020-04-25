@@ -16,7 +16,7 @@
     margin-left: 20px;
     padding: 7px;
     border-radius: 2px;
-    &:hover {
+    &:hover:not(.pc) {
       background-color: #b93d60;
       text-decoration: none !important;
       color: white;
@@ -24,6 +24,9 @@
   }
   h3 {
     color: #b83b5e;
+    .pc {
+      text-decoration: none !important;
+    }
   }
 }
 
@@ -238,6 +241,7 @@ form {
   font-weight: bold;
   border: none;
 }
+/* Its a hot element in products and it is showing when a price of a product is less then $100 */
 .buy {
   border: none;
   background-color: crimson;
@@ -245,17 +249,47 @@ form {
   color: #fdfdfd;
   font-size: 10px;
   position: absolute;
+  cursor: none;
   top: 0;
   left: 0;
 }
+
+/* Button in product detail section */
 .prod-buy-btn {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  padding: 10px;
   background-color: seagreen;
   border: none;
   color: #eeeeee;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
+
+/* Showing paragraph when a total amount is over 500 */
+.show-p {
+  position: absolute;
+  left: 0;
+  transform: translateX(-500px);
+  background-color: crimson;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  z-index: 99;
+  animation: djole 2s;
+}
+@keyframes djole {
+  from {
+    transform: translateX(-500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+.show-show {
+  transform: translateX(0px);
+}
+
+/* Close btn when add to cart in home page */
 .close {
   position: absolute;
   right: 0;
@@ -263,6 +297,8 @@ form {
   padding: 5px;
   cursor: pointer;
 }
+
+/* Its green field area in a bottom on the page with Total amount */
 .buy-price-products {
   position: fixed;
   display: flex;

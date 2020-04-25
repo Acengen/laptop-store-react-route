@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
 
 class ProductDetail extends Component {
   state = {
@@ -11,6 +12,14 @@ class ProductDetail extends Component {
   }
 
   render() {
+    let paragraph = null;
+    let classes = "show-show";
+    if (this.props.price > 500) {
+      paragraph = <p className={`show-p ${classes}`}>You have 10% descort</p>;
+    } else {
+      paragraph = null;
+    }
+
     const productDetail = this.props.productDetail.map((prod) => {
       return (
         <div className="card" key={prod.id}>
@@ -19,6 +28,7 @@ class ProductDetail extends Component {
               <h2 className="text-center">{prod.name}</h2>
               <p className="text-center text-muted">{prod.type}</p>
               <img src={prod.picture} className="card-img" alt="..." />
+              <p className="card-header font-weight-bold">${prod.price}</p>
             </div>
             <div className="col-md-8">
               <div className="card-body">
@@ -30,25 +40,32 @@ class ProductDetail extends Component {
               </div>
             </div>
           </div>
+
           <button
             onClick={() => this.props.buyProducts(prod.price)}
-            className="prod-buy-btn"
+            className={`prod-buy-btn`}
           >
             Buy Now
           </button>
         </div>
       );
     });
-    return (
-      <div className="product-detail">
-        <div>
-          {productDetail}
-          <Link to="/">
-            <i className="fa fa-arrow-circle-o-left"></i>
-          </Link>
+
+    if (this.props.loading) {
+      return <Spinner />;
+    } else {
+      return (
+        <div className="product-detail">
+          {paragraph}
+          <div>
+            {productDetail}
+            <Link to="/">
+              <i className="fa fa-arrow-circle-o-left"></i>
+            </Link>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
