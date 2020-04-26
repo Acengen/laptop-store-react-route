@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
+import PropType from "prop-types";
 
 class ProductDetail extends Component {
-  state = {
-    price: "",
-  };
-
   componentDidMount() {
     this.props.getProductByName(this.props.match.params.name);
   }
@@ -68,5 +65,12 @@ class ProductDetail extends Component {
     }
   }
 }
+
+ProductDetail.propTypes = {
+  loading: PropType.bool.isRequired,
+  buyProducts: PropType.func.isRequired,
+  price: PropType.number.isRequired,
+  productDetail: PropType.array.isRequired,
+};
 
 export default ProductDetail;

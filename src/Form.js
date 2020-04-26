@@ -1,10 +1,9 @@
 import React, { Component } from "react";
+import PropType from "prop-types";
 
 class Form extends Component {
   state = {
     productsType: "",
-    email: "",
-    password: "",
     classes: "",
     valid: false,
   };
@@ -36,7 +35,7 @@ class Form extends Component {
     });
   };
   render() {
-    console.log(this.state);
+    console.log("[ProductType] rendering...");
     return (
       <div className="form-container my-3">
         <p>SEARCH PRODUCTS</p>
@@ -55,4 +54,9 @@ class Form extends Component {
   }
 }
 
-export default Form;
+Form.propTypes = {
+  alertShow: PropType.func.isRequired,
+  searchProducts: PropType.func.isRequired,
+};
+
+export default React.memo(Form);

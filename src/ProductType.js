@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropType from "prop-types";
 
 const ProductType = ({ productsType, onChange }) => {
-  console.log(productsType);
+  console.log("[ProductType] rendering...");
   const prod = productsType.map((prods) => {
     return (
       <div className="card" key={prods.id}>
@@ -31,6 +32,11 @@ const ProductType = ({ productsType, onChange }) => {
     );
   });
   return <div className="product-type">{prod}</div>;
+};
+
+ProductType.propTypes = {
+  productsType: PropType.array.isRequired,
+  onChange: PropType.func.isRequired,
 };
 
 export default ProductType;

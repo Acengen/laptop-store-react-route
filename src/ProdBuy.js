@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropType from "prop-types";
 
 const ProdBuy = ({ prod, clearProductsToBuy, deleteProd }) => {
   const prods = prod.map((prod, index) => {
@@ -32,6 +33,12 @@ const ProdBuy = ({ prod, clearProductsToBuy, deleteProd }) => {
       </div>
     </div>
   );
+};
+
+ProdBuy.propTypes = {
+  prod: PropType.array.isRequired,
+  deleteProd: PropType.func.isRequired,
+  clearProductsToBuy: PropType.func.isRequired,
 };
 
 export default ProdBuy;

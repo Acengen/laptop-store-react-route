@@ -1,4 +1,5 @@
 import React from "react";
+import PropType from "prop-types";
 
 class Buy extends React.Component {
   render() {
@@ -14,5 +15,10 @@ class Buy extends React.Component {
     );
   }
 }
+
+Buy.propTypes = {
+  clearPrice: PropType.func.isRequired,
+  price: PropType.number.isRequired,
+};
 
 export default Buy;

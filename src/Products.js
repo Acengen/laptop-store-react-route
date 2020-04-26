@@ -2,14 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 import Error from "./Error";
+import PropTypes from "prop-types";
 
 class Products extends React.Component {
-  state = {
-    prod: [],
-    price: "",
-  };
-
+  /* Optimization */
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("shouldComponentUpdate");
+    if (
+      nextProps.products !== this.props.products ||
+      nextProps.onChange !== this.props.onChange
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   render() {
+    console.log("[Products.js] rendering...");
     if (this.props.loading) {
       return <Spinner />;
     } else {
@@ -17,6 +26,7 @@ class Products extends React.Component {
         <div className="products">
           <Error>
             {this.props.products.map((prods) => {
+              console.log("rendering....");
               return (
                 <div className="card" key={prods.id}>
                   <img src={prods.picture} alt="productimage" />
@@ -55,5 +65,10 @@ class Products extends React.Component {
     }
   }
 }
+
+Products.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  products: PropTypes.array.isRequired,
+};
 
 export default Products;

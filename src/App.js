@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./css/main.css";
 import axios from "axios";
 
+import Container from "./Container";
+
 import Navbar from "./Navbar";
 import Products from "./Products";
 import Form from "./Form";
@@ -30,6 +32,11 @@ class App extends Component {
 
   componentDidMount() {
     this.getProducts();
+    console.log("componentDidMount");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("componentDidUpdate");
   }
 
   getProducts = async () => {
@@ -130,7 +137,7 @@ class App extends Component {
     } = this.state;
     return (
       <Router>
-        <div className="container-fluid">
+        <Container>
           <Navbar />
           <div className="container">
             <Switch>
@@ -188,7 +195,7 @@ class App extends Component {
               />
             </Switch>
           </div>
-        </div>
+        </Container>
       </Router>
     );
   }
