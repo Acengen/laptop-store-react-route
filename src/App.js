@@ -119,6 +119,15 @@ class App extends Component {
   };
 
   render() {
+    const {
+      alert,
+      productsType,
+      products,
+      loading,
+      price,
+      productDetail,
+      prod,
+    } = this.state;
     return (
       <Router>
         <div className="container-fluid">
@@ -130,7 +139,7 @@ class App extends Component {
                 path="/"
                 render={(props) => (
                   <Fragment>
-                    <Alert alert={this.state.alert} />
+                    <Alert alert={alert} />
                     <Form
                       searchProducts={this.searchProducts}
                       alertShow={this.alertShow}
@@ -140,18 +149,18 @@ class App extends Component {
                     </button>
                     {this.state.productsType.length > 1 ? (
                       <ProductType
-                        productsType={this.state.productsType}
+                        productsType={productsType}
                         onChange={this.onChange}
                       />
                     ) : (
                       <Products
-                        products={this.state.products}
+                        products={products}
                         onChange={this.onChange}
-                        loading={this.state.loading}
+                        loading={loading}
                       />
                     )}
                     <ProdBuy
-                      prod={this.state.prod}
+                      prod={prod}
                       clearProductsToBuy={this.clearProductsToBuy}
                       deleteProd={this.deleteProd}
                     />
@@ -167,16 +176,13 @@ class App extends Component {
                   <Fragment>
                     <ProductDetail
                       {...props}
-                      productDetail={this.state.productDetail}
+                      productDetail={productDetail}
                       getProductByName={this.getProductByName}
                       buyProducts={this.buyProducts}
-                      loading={this.state.loading}
-                      price={this.state.price}
+                      loading={loading}
+                      price={price}
                     />
-                    <Buy
-                      price={this.state.price}
-                      clearPrice={this.clearPrice}
-                    />
+                    <Buy price={price} clearPrice={this.clearPrice} />
                   </Fragment>
                 )}
               />
