@@ -410,6 +410,15 @@ form input::placeholder {
   cursor: pointer;
 }
 
+/* Input valid and invalid classes */
+.red {
+  border-color: crimson;
+}
+
+.green {
+  border-color: green;
+}
+
 /* media query 740px */
 @media (max-width: 740px) {
   .product-detail .card {
