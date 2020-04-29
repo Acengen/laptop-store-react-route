@@ -2,30 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 import Error from "./Error";
-import PropTypes from "prop-types";
+import ProductContext from "./context/Context";
 
 class Products extends React.Component {
-  /* Optimization */
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
-    if (
-      nextProps.products !== this.props.products ||
-      nextProps.onChange !== this.props.onChange
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  static contextType = ProductContext;
+
   render() {
     console.log("[Products.js] rendering...");
-    if (this.props.loading) {
+    const { products, onChange, loading } = this.context;
+    if (loading) {
       return <Spinner />;
     } else {
       return (
         <div className="products">
           <Error>
-            {this.props.products.map((prods) => {
+            {products.map((prods) => {
               console.log("rendering....");
               return (
                 <div className="card" key={prods.id}>
@@ -41,7 +32,7 @@ class Products extends React.Component {
                       <button
                         className="buyBtn"
                         onClick={() =>
-                          this.props.onChange(
+                          onChange(
                             prods.price,
                             prods.name,
                             prods.type,
@@ -65,10 +56,5 @@ class Products extends React.Component {
     }
   }
 }
-
-Products.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  products: PropTypes.array.isRequired,
-};
 
 export default Products;

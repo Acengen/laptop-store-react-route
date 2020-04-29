@@ -1,11 +1,18 @@
-import React, { Fragment } from "react";
-import PropType from "prop-types";
+import React, { Fragment, useContext } from "react";
 
-const ProdBuy = ({ prod, clearProductsToBuy, deleteProd }) => {
-  const prods = prod.map((prod, index) => {
+import ProductContext from "./context/Context";
+
+const ProdBuy = () => {
+  const productContext = useContext(ProductContext);
+
+  const prods = productContext.prod.map((prod, index) => {
+    console.log("[ProdBuy] rendering . . . ");
     return (
       <div className="card" key={Math.random()}>
-        <span className="close" onClick={() => deleteProd(index)}>
+        <span
+          className="close"
+          onClick={() => productContext.deleteProd(index)}
+        >
           <i className="fa fa-trash-o"></i>
         </span>
         <p>
@@ -19,7 +26,7 @@ const ProdBuy = ({ prod, clearProductsToBuy, deleteProd }) => {
   });
   return (
     <div className="box">
-      {!prod.length ? null : (
+      {!productContext.prod.length ? null : (
         <Fragment>
           <h4 className="my-3">Shopping Cart</h4>
         </Fragment>
@@ -27,18 +34,14 @@ const ProdBuy = ({ prod, clearProductsToBuy, deleteProd }) => {
 
       <div className="prod">
         {prods}
-        {!prod.length ? null : (
-          <button onClick={() => clearProductsToBuy()}>Clear Cart</button>
+        {!productContext.prod.length ? null : (
+          <button onClick={() => productContext.clearProductsToBuy()}>
+            Clear Cart
+          </button>
         )}
       </div>
     </div>
   );
 };
 
-ProdBuy.propTypes = {
-  prod: PropType.array.isRequired,
-  deleteProd: PropType.func.isRequired,
-  clearProductsToBuy: PropType.func.isRequired,
-};
-
-export default ProdBuy;
+export default React.memo(ProdBuy);

@@ -4,6 +4,7 @@ import "./css/main.css";
 import axios from "axios";
 
 import Container from "./Container";
+import ProductContext from "./context/Context";
 
 import Navbar from "./Navbar";
 import Products from "./Products";
@@ -27,7 +28,6 @@ class App extends Component {
     buyPrice: [],
     price: 0,
     loading: false,
-    show: false,
   };
 
   componentDidMount() {
@@ -126,15 +126,8 @@ class App extends Component {
   };
 
   render() {
-    const {
-      alert,
-      productsType,
-      products,
-      loading,
-      price,
-      productDetail,
-      prod,
-    } = this.state;
+    const { alert, productsType, loading, price, productDetail } = this.state;
+
     return (
       <Router>
         <Container>
@@ -160,17 +153,25 @@ class App extends Component {
                         onChange={this.onChange}
                       />
                     ) : (
-                      <Products
-                        products={products}
-                        onChange={this.onChange}
-                        loading={loading}
-                      />
+                      <ProductContext.Provider
+                        value={{
+                          products: this.state.products,
+                          onChange: this.onChange,
+                          loading: this.state.loading,
+                        }}
+                      >
+                        <Products />
+                      </ProductContext.Provider>
                     )}
-                    <ProdBuy
-                      prod={prod}
-                      clearProductsToBuy={this.clearProductsToBuy}
-                      deleteProd={this.deleteProd}
-                    />
+                    <ProductContext.Provider
+                      value={{
+                        prod: this.state.prod,
+                        clearProductsToBuy: this.clearProductsToBuy,
+                        deleteProd: this.deleteProd,
+                      }}
+                    >
+                      <ProdBuy />
+                    </ProductContext.Provider>
                   </Fragment>
                 )}
               />
