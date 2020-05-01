@@ -3,19 +3,19 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./css/main.css";
 import axios from "axios";
 
-import Container from "./Container";
+import Container from "./container/Container";
 import ProductContext from "./context/Context";
 
 import Navbar from "./Navbar";
-import Products from "./Products";
+import Products from "./Products/Products";
 import Form from "./Form";
-import ProductType from "./ProductType";
-import About from "./About";
-import ProductDetail from "./ProductDetail";
-import ProdBuy from "./ProdBuy";
-import Alert from "./Alert";
-import Contact from "./Contact";
-import Buy from "./Buy";
+import ProductType from "./Products/ProductType";
+import About from "./Simple Pages/About";
+import ProductDetail from "./Products/ProductDetail";
+import ProdBuy from "./Products/ProdBuy";
+import Alert from "./Error & Alert/Alert";
+import Contact from "./Simple Pages/Contact";
+import BuyPrice from "./Products/BuyPrice";
 
 class App extends Component {
   state = {
@@ -190,7 +190,7 @@ class App extends Component {
                       loading={loading}
                       price={price}
                     />
-                    <Buy price={price} clearPrice={this.clearPrice} />
+                    <BuyPrice price={price} clearPrice={this.clearPrice} />
                   </Fragment>
                 )}
               />

@@ -1,7 +1,7 @@
 import React from "react";
 import PropType from "prop-types";
 
-class Buy extends React.Component {
+class BuyPrice extends React.Component {
   render() {
     return (
       <div className="buy-price-products">
@@ -16,9 +16,9 @@ class Buy extends React.Component {
   }
 }
 
-Buy.propTypes = {
+BuyPrice.propTypes = {
   clearPrice: PropType.func.isRequired,
   price: PropType.number.isRequired,
 };
 
-export default Buy;
+export default BuyPrice;

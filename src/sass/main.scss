@@ -328,6 +328,16 @@ form {
   border-color: green;
 }
 
+/* Contact */
+
+.contact {
+  text-align: center;
+  margin-top: 100px;
+  p {
+    margin: 0px;
+  }
+}
+
 /* media query 740px */
 
 @media (max-width: 740px) {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 import PropType from "prop-types";
 
 class ProductDetail extends Component {

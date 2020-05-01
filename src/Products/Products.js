@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Spinner from "./Spinner";
-import Error from "./Error";
-import ProductContext from "./context/Context";
+import Spinner from "../Spinner";
+import Error from "../Error & Alert/Error";
+import ProductContext from "../context/Context";
 
 class Products extends React.Component {
   static contextType = ProductContext;

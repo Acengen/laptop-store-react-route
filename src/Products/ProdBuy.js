@@ -1,6 +1,5 @@
 import React, { Fragment, useContext } from "react";
-
-import ProductContext from "./context/Context";
+import ProductContext from "../context/Context";
 
 const ProdBuy = () => {
   const productContext = useContext(ProductContext);
