@@ -1,11 +1,10 @@
 import React, { Fragment, useContext } from "react";
 import ProductContext from "../context/Context";
 
-const ProdBuy = () => {
+const ProdBuy = React.memo(() => {
   const productContext = useContext(ProductContext);
 
   const prods = productContext.prod.map((prod, index) => {
-    console.log("[ProdBuy] rendering . . . ");
     return (
       <div className="card" key={Math.random()}>
         <span
@@ -41,6 +40,6 @@ const ProdBuy = () => {
       </div>
     </div>
   );
-};
+});
 
 export default React.memo(ProdBuy);

@@ -8,6 +8,13 @@ class ProductDetail extends Component {
     this.props.getProductByName(this.props.match.params.name);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.productDetail !== this.props.productDetail) {
+      return true;
+    }
+    return false;
+  }
+
   render() {
     let paragraph = null;
     let classes = "show-show";
@@ -18,6 +25,7 @@ class ProductDetail extends Component {
     }
 
     const productDetail = this.props.productDetail.map((prod) => {
+      console.log("[productDetail.js]");
       return (
         <div className="card" key={prod.id}>
           <div className="row no-gutters">

@@ -8,7 +8,6 @@ class Products extends React.Component {
   static contextType = ProductContext;
 
   render() {
-    console.log("[Products.js] rendering...");
     const { products, onChange, loading } = this.context;
     if (loading) {
       return <Spinner />;
@@ -17,7 +16,6 @@ class Products extends React.Component {
         <div className="products">
           <Error>
             {products.map((prods) => {
-              console.log("rendering....");
               return (
                 <div className="card" key={prods.id}>
                   <img src={prods.picture} alt="productimage" />

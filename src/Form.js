@@ -35,7 +35,6 @@ class Form extends Component {
     });
   };
   render() {
-    console.log("[ProductType] rendering...");
     return (
       <div className="form-container my-3">
         <p>SEARCH PRODUCTS</p>

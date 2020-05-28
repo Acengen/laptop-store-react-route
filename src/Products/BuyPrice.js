@@ -2,6 +2,12 @@ import React from "react";
 import PropType from "prop-types";
 
 class BuyPrice extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.price !== this.props.price) {
+      return true;
+    }
+    return false;
+  }
   render() {
     return (
       <div className="buy-price-products">

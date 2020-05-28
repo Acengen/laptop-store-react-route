@@ -32,11 +32,6 @@ class App extends Component {
 
   componentDidMount() {
     this.getProducts();
-    console.log("componentDidMount");
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log("componentDidUpdate");
   }
 
   getProducts = async () => {
